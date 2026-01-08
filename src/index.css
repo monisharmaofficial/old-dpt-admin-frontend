@@ -1,0 +1,423 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body{
+  font-family: 'Poppins', sans-serif;
+  font-weight:400;
+}
+div, *{ box-sizing: border-box;}
+.dark-theme{
+  position: relative;
+}
+.loading-indicator:before {
+    content: '';
+    background: #00000080;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .loading-indicator:after {
+    content: ' ';
+    position: fixed;
+    top: 40%;
+    left: 45%;
+    z-index: 10010;
+    color:white;
+    text-align:center;
+    font-weight:bold;
+    font-size:1.2rem;        
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #0474bf; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+/* ToogleInput.css */
+.toggle {
+  --unchecked-color: red;
+  --checked-color: green;
+  --thumb-size: 24px;
+
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--unchecked-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.toggle:checked {
+  background-color: var(--checked-color);
+}
+
+.toggle::before {
+  content: "";
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggle:checked::before {
+  transform: translate(-50%, -50%) translateX(calc(var(--thumb-size) / 2));
+}
+
+.ck-editor__editable {
+  height: 300px;
+}
+
+
+/*===tour-booking list==*/
+
+.listtable {
+  overflow-x: auto;
+}
+
+.listtable table{
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+.listtable table thead {
+  background-color: #dbdddf;
+}
+.listtable table tr{
+  border-bottom: 1px solid #ddd;
+}
+
+.listtable table td, th {
+  text-align: left;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  padding: 8px 12px;
+  font-size:13px;
+  color: #545f6f;
+  font-weight:500;
+  overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.listtable table th{
+  font-weight:600;
+  color:#000;
+}
+
+
+.listtable tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;}
+
+
+  .listtable .btn-sm {
+    font-size: 11px;
+    min-height: auto;
+    height: auto;
+    padding: 7px 8px;
+    width: 100%;
+    text-transform: inherit;
+    line-height: 15px;
+    border-radius: 4px;
+    font-weight:500;
+    color: #fff;
+     font-family: 'Poppins', sans-serif;
+    background-color:#40add6;
+}
+.reviewconfirm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.tabletrashbtn {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+.sendtoguide span {
+  color: #40add6;
+  font-size: 11px;
+  font-weight: 500;
+}
+.trashicon {
+  position: relative;
+  top: 4px;
+}
+
+/*==table search bar==*/
+.searchdetail label {
+  color: #000;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.input-group > :last-child{
+  border-radius: 4px;
+  border-color: #dbdbdb;
+  padding: 0px 10px;
+  font-weight:400;
+}
+
+.react-datepicker-wrapper {
+  border: 1px solid #dbdbdb !important;
+  border-radius: 4px;
+  width: 198px;
+  height: 32px;
+  font-size: 12px;
+  color: #a0a9a8;
+}
+input{
+  outline:none !important;
+}
+
+[class*="datepicker"] input {
+  position: relative;
+  top: 6px;
+  left: 10px;
+}
+.searchdetail {
+  display: flex;
+  gap:10px;
+}
+
+.searchdetail .formfield{  display: flex;
+flex-direction: column;
+gap:2px;
+}
+
+
+/*===view booking details lhs==*/
+.dataLhs {
+  width: 40%;
+  margin-right:30px;
+}
+.datarhs {
+  width:58%;
+}
+
+.datacard{
+  border-radius: 4px;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,.16);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.datain {
+  display: flex;
+  gap:10px;
+  padding: 7px 10px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+
+.datain span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #000;
+}
+.datain span:first-child {
+  width: 32%;
+  min-width: 32%;
+  text-align: left;
+  font-weight:500;
+}
+
+.datainIn {
+  display: flex;
+  gap:10px;
+}
+
+.datain small, span.name {
+  margin-right: 5px;
+}
+.iconwithname {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 7px 10px;
+  margin-bottom: 10px;
+}
+span.usericon {
+  display: block;
+  width: 25px;
+}
+span.personldetail {
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+}
+
+.modal-action .btn {
+  font-size: 11px;
+  min-height: auto;
+  height: auto;
+  padding: 10px 25px;
+  text-transform: inherit;
+  line-height: 15px;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #40add6;
+  border: 0px;
+  width: 80px;
+  min-width: 80px;
+}
+
+.datarhs .modal-action .btn{  width: 120px;
+  min-width: 120px;
+  padding:10px !important
+
+}
+.modal-action .btn.btn-ghost{
+background-color: #ff0000;
+color:#fff;
+padding: 10px 20px;
+}
+
+/*==Current Categor==*/
+.radius{border-radius:7px;}
+.btnblue {
+  font-size: 11px;
+  padding: 10px 25px;
+  line-height: 15px;
+  text-transform: inherit;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #40add6;
+  box-sizing: border-box;
+}
+
+/*==Current Emirates==*/
+
+/*==Current Tours==*/
+
+/*==Manage tourist visa==*/
+.listtable .bg-slate-300 {
+  font-weight: 500;
+  padding: 4px 6px;
+  font-size: 10px;
+  min-width: 42px;
+  border-radius: 2px;
+  margin: 3px 0px 5px;
+  border: 1px solid #3DAAD5;
+  background-color: #3DAAD5;
+  color: #fff;
+}
+
+.visaapplication table td, .visaapplication table th{
+vertical-align:top;
+}
+
+.visaapplication b {
+  font-weight: 500;
+  color: #000;
+}
+
+/*==Recent Transactions==*/
+
+
+.listtable .font-bold {
+  font-weight: 500;
+  color: #000;
+}
+
+.filtercta .btn {
+  border-radius: 4px;
+  border-color: #dbdbdb;
+  padding: 0px 10px;
+  position: relative;
+  top: 5px;
+  color: #959595;
+  font-weight: 400;
+}
+.filtercta .btn-outline:hover {
+  background-color: #3DAAD5 ;
+  color: #fff;
+}
+
+
+/*==sidebar==*/
+
+.navbar .btn-primary{background-color: #3DAAD5; border-color:#3DAAD5;}
+.drawer-side .font-semibold a:active {
+  background-color: transparent;
+}
+.drawer-side li a, .drawer-side li [class*="gap"] {
+  font-weight: 500;
+  color: #000;
+  font-size: 14px;
+}
+.drawer-side .bg-primary, .drawer-side a.font-normal:active, .drawer-side .flex-col:active, .drawer-side .menu-compact li a:active{
+  background-color: #3DAAD5;
+}
+.mySelect__value-container{
+  height: 45.9px;
+ }
+
+button.printButton {
+    background-color: #f4f4f4;
+    color: #444;
+    border: 1px solid #DDD;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.img-thumbs {
+
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+  padding: 0.75rem;
+}
+.img-thumbs-hidden {
+  display: none;
+}
+
+.wrapper-thumb {
+  position: relative;
+  display:inline-block;
+  margin: 1rem 0;
+  justify-content: space-around;
+}
+
+.img-preview-thumb {
+  background: #fff;
+  border: 1px solid none;
+  border-radius: 0.25rem;
+  box-shadow: 0.125rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.12);
+  margin-right: 1rem;
+  max-width: 140px;
+  padding: 0.25rem;
+}
+
+.remove-btn{
+  position:absolute;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:.7rem;
+  top:-5px;
+  right:10px;
+  width:20px;
+  height:20px;
+  background:white;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.remove-btn:hover{
+  box-shadow: 0px 0px 3px grey;
+  transition:all .3s ease-in-out;
+}
+
+
+
